@@ -47,7 +47,7 @@ This service simulates real-world payment processor behavior (e.g., Razorpay web
 ## Transaction Webhook: 
 - POST /v1/webhooks/transactions
 - Request body
-{
+- {
   "transaction_id": "txn_abc123newid236",
   "source_account": "acc_user_789",
   "destination_account": "acc_merchant_456",
@@ -61,7 +61,7 @@ This service simulates real-world payment processor behavior (e.g., Razorpay web
 ## Get Transaction Status
 - GET /v1/transactions/{transaction_id}
 - Response
-  {
+- {
     "transaction_id": "txn_abc123def456",
     "source_account": "acc_user_789",
     "destination_account": "acc_merchant_456",
@@ -102,11 +102,11 @@ The service will start at : http://127.0.0.1:8000
 
 ### 6 Testing 
 
--Send a webhook request
--Immediately query the transaction status
--Status will initially be PROCESSING
--After ~30 seconds, status changes to PROCESSED
--Sending the same webhook again will not create a duplicate transaction
+Send a webhook request
+Immediately query the transaction status
+Status will initially be PROCESSING
+After ~30 seconds, status changes to PROCESSED
+Sending the same webhook again will not create a duplicate transaction
 
 ## Deployment
 The service is deployed on Render using a GitHub-connected workflow.
