@@ -37,17 +37,20 @@ This service simulates real-world payment processor behavior (e.g., Razorpay web
 
 ### Health Check: 
 - GET \
-- Response :
+- Response :  
+```json
 {
   "status": "HEALTHY",
   "current_time": "2024-01-15T10:30:00Z"
 }
+```
 
  
 ## Transaction Webhook: 
 - POST /v1/webhooks/transactions
-- Request body
-- {
+- Request body:
+```json
+{
   "transaction_id": "txn_abc123newid236",
   "source_account": "acc_user_789",
   "destination_account": "acc_merchant_456",
@@ -55,13 +58,18 @@ This service simulates real-world payment processor behavior (e.g., Razorpay web
   "currency": "INR"
 
 }
+```
 
-- Response: 202 Accepted
+- Response:
+  ```json
+  202 Accepted
+  ```
 
 ## Get Transaction Status
 - GET /v1/transactions/{transaction_id}
 - Response
-- {
+  ```json
+  {
     "transaction_id": "txn_abc123def456",
     "source_account": "acc_user_789",
     "destination_account": "acc_merchant_456",
@@ -71,6 +79,7 @@ This service simulates real-world payment processor behavior (e.g., Razorpay web
     "created_at": "2024-01-15T10:30:00Z",
     "processed_at": "2024-01-15T10:30:30Z"
   }
+  ```
 
 ---
 
